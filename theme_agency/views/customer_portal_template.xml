@@ -1,0 +1,1612 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="customer_portal_template" name="Customer Portal Form">
+        <t t-call="website.layout">
+            <div class="contain">
+                <div id="section_a" class="hide_sec">
+                    <form id="section_a_form" class="regForm" method="post" action="/section-a-submit"
+                          enctype="multipart/form-data">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <input type="hidden" name="partner_id" t-att-value="partner.id"/>
+                        <h1>My Profile</h1>
+
+                        <div style="text-align:center;margin-top:40px;">
+                            <span class="step menu_a" style="background:#FED600;color:black">Primary Info</span>
+                            <span class="step menu_b">Medical Info</span>
+                            <span class="step menu_c">Address Info</span>
+                        </div>
+
+                        <div class="demo_header">
+                            <h4>
+                                <b>Section A: Primary Info</b>
+                            </h4>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="text-center">
+                                    <b>Customer ID -
+                                        <t t-esc="partner.cust_number"/>
+                                    </b>
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                First Name:
+                                <p>
+                                    <input placeholder="First name..." name="name" t-att-value="partner.name"
+                                           readonly="readonly"/>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                Last Name:
+                                <p>
+                                    <input placeholder="Last name..." name="surname" t-att-value="partner.last_name"
+                                           readonly="readonly"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                Gender:
+                                <p>
+                                    <input placeholder="Gender..." name="gender" t-att-value="partner.gender_id.name"
+                                           readonly="readonly"/>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                Prefix Address:
+                                <p>
+                                    <input placeholder="Title..." name="title" t-att-value="partner.title.name"
+                                           readonly="readonly"/>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                DOB:
+                                <p>
+                                    <input type="date" placeholder="DOB..." name="birth_date" id="birth_date"
+                                           t-att-value="partner.birth_date"/>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                Blood Group:
+                                <p>
+                                    <select name="blood_group_id" class="select_style">
+                                        <t t-foreach="blood_groups" t-as="blood_group">
+                                            <t t-if="partner.blood_group_id.id == blood_group.id">
+                                                <option t-att-value="blood_group.id" selected="selected">
+                                                    <t t-esc="blood_group.name"/>
+                                                </option>
+                                            </t>
+                                            <t t-else="">
+                                                <option t-att-value="blood_group.id">
+                                                    <t t-esc="blood_group.name"/>
+                                                </option>
+                                            </t>
+                                        </t>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                Email (Personal):
+                                <p>
+                                    <input placeholder="Personal Email..." name="email" type="email"
+                                           t-att-value="partner.email"/>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                Email (Official):
+                                <p>
+                                    <input placeholder="Official Email..." name="o_email" type="email"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                Primary Mobile Number:
+                                <p>
+                                    <input placeholder="Primary Mobile Number..." name="phone" type="number"
+                                           t-att-value="partner.phone" readonly="readonly"/>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                Current City Of Program:
+                                <p>
+                                    <input placeholder="Current City Of Program..." name="cohort_mumber"
+                                           t-att-value="partner.city_program" readonly="readonly"/>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                Product Name:
+                                <p>
+                                    <input placeholder="Product Name..." name="product"/>
+                                </p>
+                            </div>
+
+                            <div class="col-md-6">
+                                Altlife Coach (RM):
+                                <p>
+                                    <input placeholder="Coach Name..." name="coach_id"
+                                           t-att-value="partner.coach_id.name" readonly="readonly"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                Marital Status:
+                                <p>
+                                    <select name="marital_status" class="select_style">
+                                        <t t-if="partner.marital_status == 'married'">
+                                            <option value="married" selected="selected">Married</option>
+                                            <option value="unmarried">Unmarried</option>
+                                            <option value="divorced">Divorceed</option>
+                                            <option value="widowed">Widowed</option>
+                                        </t>
+                                        <t t-elif="partner.marital_status == 'unmarried'">
+                                            <option value="married">Married</option>
+                                            <option value="unmarried" selected="selected">Unmarried</option>
+                                            <option value="divorced">Divorceed</option>
+                                            <option value="widowed">Widowed</option>
+                                        </t>
+                                        <t t-elif="partner.marital_status == 'divorced'">
+                                            <option value="married">Married</option>
+                                            <option value="unmarried">Unmarried</option>
+                                            <option value="divorced" selected="selected">Divorceed</option>
+                                            <option value="widowed">Widowed</option>
+                                        </t>
+                                        <t t-elif="partner.marital_status == 'widowed'">
+                                            <option value="married">Married</option>
+                                            <option value="unmarried">Unmarried</option>
+                                            <option value="divorced">Divorceed</option>
+                                            <option value="widowed" selected="selected">Widowed</option>
+                                        </t>
+                                        <t t-else="">
+                                            <option value="married">Married</option>
+                                            <option value="unmarried">Unmarried</option>
+                                            <option value="divorced">Divorceed</option>
+                                            <option value="widowed">Widowed</option>
+                                        </t>
+
+                                    </select>
+                                </p>
+                            </div>
+
+                            <div class="col-md-6">
+                                Emergency Contact:
+                                <p>
+                                    <input placeholder="Emergency Contact..." name="emergency_contact"
+                                           class="numericOnly"
+                                           t-att-value="partner.emergency_contact" minlength="10" maxlength="10"
+                                           required="required"/>
+                                </p>
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                Currently Pregnant / Planning to conceive:
+                                <p>
+                                    <select name="pregnant" class="select_style">
+                                        <t t-if="partner.pregnancy">
+                                            <option value="yes" selected="selected">Yes</option>
+                                            <option value="no">No</option>
+                                        </t>
+                                        <t t-else="">
+                                            <option value="yes">Yes</option>
+                                            <option value="no" selected="selected">No</option>
+                                        </t>
+
+                                    </select>
+                                </p>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                How frequently do you travel?:
+                                <p>
+                                    <select name="travel_frequency" class="select_style">
+                                        <t t-foreach="travel_frequencies" t-as="travel_frequency">
+                                            <t t-if="partner.travel_frequency.id == travel_frequency.id">
+                                                <option t-att-value="travel_frequency.id" selected="selected">
+                                                    <t t-esc="travel_frequency.name"/>
+                                                </option>
+                                            </t>
+                                            <t t-else="">
+                                                <option t-att-value="travel_frequency.id">
+                                                    <t t-esc="travel_frequency.name"/>
+                                                </option>
+                                            </t>
+
+                                        </t>
+                                    </select>
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                Motivation:
+                                <p>
+                                    <textarea class="form-control" cols="40" name="motivation"
+                                              placeholder="Motivation..."
+                                              rows="5">
+                                        <t t-esc="partner.motivation"/>
+                                    </textarea>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div style="overflow:auto;">
+                            <div style="float:right;">
+                                <input type="submit" style="padding:10px 30px;background: #FED600" value="Save"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="section_b" class="hide_sec" style="display:none">
+                    <form id="regForm" class="regForm" method="post" action="/section-b-submit"
+                          enctype="multipart/form-data">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <input type="hidden" name="medical_history" t-att-value="medical_history.id"/>
+                        <input type="hidden" name="data_food_allergy_ids" id="data_food_allergy_ids"/>
+                        <input type="hidden" name="data_food_intolerance_ids" id="data_food_intolerance_ids"/>
+                        <h1>My Profile</h1>
+
+                        <div style="text-align:center;margin-top:40px;">
+                            <span class="step menu_a">Primary Info</span>
+                            <span class="step menu_b" style="background:#FED600;color:black">Medical Info</span>
+                            <span class="step menu_c">Address Info</span>
+                        </div>
+
+                        <div class="demo_header">
+                            <h4>
+                                <b>Section B: Medical Info</b>
+                            </h4>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="text-center">
+                                    <b>Customer ID -
+                                        <t t-esc="partner.cust_number"/>
+                                    </b>
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div t-attf-class="form-group col-xl-12">
+                                <div id="myModal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">LifeStyle Conditions</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group col-xl-6">
+                                                            <label class="col-form-label" for="lifestyle_id">
+                                                                Lifestyle Condition(s)
+                                                            </label>
+                                                            <select class="form-control" id="lifestyle_id">
+                                                                <!--                                                                <option value=""></option>-->
+                                                                <t t-foreach="lifestyle_ids" t-as="lifestyle">
+                                                                    <option t-att-value="lifestyle.id">
+                                                                        <t t-esc="lifestyle.name"/>
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-xl-6">
+                                                            <label class="col-form-label" for="diagnosed_since">
+                                                                Diagnosed Since
+                                                            </label>
+                                                            <select id="diagnosed_since" t-attf-class="form-control">
+                                                                <!--                                                                <option value="">select...</option>-->
+                                                                <option value="2015">
+                                                                    2015
+                                                                </option>
+                                                                <option value="2016">
+                                                                    2016
+                                                                </option>
+                                                                <option value="2017">
+                                                                    2017
+                                                                </option>
+                                                                <option value="2018">
+                                                                    2018
+                                                                </option>
+                                                                <option value="2019">
+                                                                    2019
+                                                                </option>
+                                                                <option value="2020">
+                                                                    2020
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-xl-6">
+                                                            <label class="col-form-label" for="family_ids">
+                                                                Family History
+                                                            </label>
+                                                            <select class="form-control many2mnay_select select2"
+                                                                    id="family_ids" multiple="multiple">
+                                                                <option value=""></option>
+                                                                <t t-foreach="family_ids" t-as="familys">
+                                                                    <option t-att-value="familys.id">
+                                                                        <t t-foreach="familys" t-as="family">
+                                                                            <t t-esc="family.name"/>
+                                                                        </t>
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-xl-6">
+                                                            <label class="col-form-label" for="remark">
+                                                                Remark
+                                                            </label>
+                                                            <input type="text" id="remark"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" id="add_lifestyle_row">
+                                                    Add
+                                                </button>
+                                                <button type="button" class="btn btn-danger" id="modal_close"
+                                                        data-dismiss="modal">Close
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <label class="col-form-label" for="email">LifeStyle Condition</label>
+                                <!--                            <t t-value="0" t-as="one2many_last_id"/>-->
+                                <table class="table" id="one2many_lifestyel_condition">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Lifestyle Condition(s)</th>
+                                            <th scope="col">Diagnosed Since</th>
+                                            <th scope="col">Family History</th>
+                                            <th scope="col">Remark</th>
+                                            <th scope="col">
+                                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                                                        data-target="#myModal" id="add_lifestyle_condition">ADD
+                                                </button>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <t t-foreach="medical_history.lifestyle_condition_ids"
+                                           t-as="lifestyle_condition">
+                                            <tr>
+                                                <td>
+                                                    <span>
+                                                        <t t-esc="lifestyle_condition.lifestyle_id.name"/>
+                                                    </span>
+                                                    <input type='hidden' class="lifestyle_id" name="lifestyle_id"
+                                                           t-att-value='lifestyle_condition.lifestyle_id.id'/>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <t t-esc="lifestyle_condition.diagnosed_since"/>
+                                                    </span>
+                                                    <input type='hidden' class="diagnosed_since"
+                                                           name="diagnosed_since"
+                                                           t-att-value='lifestyle_condition.diagnosed_since'/>
+                                                </td>
+                                                <td>
+                                                    <t t-set="family_id" t-value="''"/>
+                                                    <t t-set="family_name" t-value="''"/>
+                                                    <t t-set="family_count" t-value="0"/>
+                                                    <t t-set="family_len"
+                                                       t-value="len(lifestyle_condition.family_ids)"/>
+                                                    <t t-foreach="lifestyle_condition.family_ids" t-as="family">
+                                                        <t t-set="family_count" t-value="family_count+1"/>
+                                                        <t t-set="family_name"
+                                                           t-value="family_name + str(family.name)"/>
+                                                        <t t-if="family_len > family_count">
+                                                            <t t-set="family_name"
+                                                               t-value="family_name + ', '"/>
+                                                        </t>
+                                                        <t t-set="family_id"
+                                                           t-value="family_id + str(family.id) + ','"/>
+                                                    </t>
+                                                    <span>
+                                                        <t t-esc="family_name"/>
+                                                    </span>
+                                                    <input type='hidden' class="family_ids"
+                                                           name="family_ids"
+                                                           t-att-value='family_id'/>
+
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <t t-esc="lifestyle_condition.remark"/>
+                                                    </span>
+                                                    <input type='hidden' class="remark" name="remark"
+                                                           t-att-value='lifestyle_condition.remark'/>
+                                                </td>
+
+                                                <td>
+                                                    <button class='btn btn-danger btn-sm' type='button'
+                                                            id='lifestyle_remove_row'>
+                                                        Delete
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </t>
+
+                                    </tbody>
+                                </table>
+                                <!--                            <input type="hidden" id="last_record_id" t-att-value="one2many_last_id"/>-->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div t-attf-class="form-group col-xl-12">
+                                <div id="Ailments_Modal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Any Other Ailment</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group col-xl-6">
+                                                            <label class="col-form-label" for="ailments_id">
+                                                                Any Onther Ailments
+                                                            </label>
+                                                            <select class="form-control" id="ailments_id">
+                                                                <option value=""></option>
+                                                                <t t-foreach="ailments_ids" t-as="ailments">
+                                                                    <option t-att-value="ailments.id">
+                                                                        <t t-esc="ailments.name"/>
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-xl-6">
+                                                            <label class="col-form-label" for="family_ids">
+                                                                Family History
+                                                            </label>
+                                                            <select class="form-control many2mnay_select select2"
+                                                                    id="family_ail_ids" multiple="multiple">
+                                                                <option value=""></option>
+                                                                <t t-foreach="family_ids" t-as="familys">
+                                                                    <option t-att-value="familys.id">
+                                                                        <t t-foreach="familys" t-as="family">
+                                                                            <t t-esc="family.name"/>
+                                                                        </t>
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" id="add_ailments_row">
+                                                    Add
+                                                </button>
+                                                <button type="button" class="btn btn-danger" id="ailments_modal_close"
+                                                        data-dismiss="modal">Close
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <label class="col-form-label" for="email">Any Other Ailment</label>
+                                <table class="table" id="one2many_ailments_condition">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Any Other Ailments</th>
+                                            <th scope="col">family History</th>
+                                            <th scope="col">
+                                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                                                        data-target="#Ailments_Modal" id="add_ailments_condition">ADD
+                                                </button>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <t t-foreach="medical_history.ailments_data_ids" t-as="ailments_data">
+                                            <tr>
+                                                <td>
+                                                    <span>
+                                                        <t t-esc="ailments_data.ailments_id.name"/>
+                                                    </span>
+                                                    <input type='hidden' class="ailments_id" name="ailments_id"
+                                                           t-att-value='ailments_data.ailments_id.id'/>
+                                                </td>
+                                                <td>
+                                                    <t t-set="family_set" t-value="''"/>
+                                                    <t t-set="family_set_name" t-value="''"/>
+                                                     <t t-set="family_set_count" t-value="0"/>
+                                                    <t t-set="family_set_len"
+                                                       t-value="len(ailments_data.family_ids)"/>
+                                                    <t t-foreach="ailments_data.family_ids" t-as="family">
+                                                        <t t-set="family_set_count" t-value="family_set_count+1"/>
+
+                                                        <t t-set="family_set_name"
+                                                           t-value="family_set_name + str(family.name)"/>
+
+                                                        <t t-if="family_set_len > family_set_count">
+                                                            <t t-set="family_set_name"
+                                                               t-value="family_set_name + ', '"/>
+                                                        </t>
+
+
+                                                        <t t-set="family_set"
+                                                           t-value="family_set + str(family.id) + ','"/>
+                                                    </t>
+                                                    <span>
+                                                        <t t-esc="family_set_name"/>
+                                                    </span>
+                                                    <input type='hidden' class="family_ids"
+                                                           name="family_ids"
+                                                           t-att-value='family_set'/>
+                                                </td>
+                                                <td>
+                                                    <button class='btn btn-danger btn-sm' type='button'
+                                                            id='ailments_remove_row'>
+                                                        Delete
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </t>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div t-attf-class="form-group col-xl-12">
+                                <div id="medication_Modal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Medication Category</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group col-xl-6">
+                                                            <label class="col-form-label" for="category_id">
+                                                                Medication Category
+                                                            </label>
+
+                                                            <select class="form-control"
+                                                                    name="category_id" id="category_id">
+                                                                <option value=""></option>
+                                                                <t t-foreach="category_ids" t-as="categ">
+                                                                    <option t-att-value="categ.id"
+                                                                            t-att-selected="categ.id in partner.category_id.ids">
+                                                                        <t t-foreach="categ" t-as="c">
+                                                                            <t t-esc="c.name"/>
+                                                                        </t>
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" id="add_medication_row">
+                                                    Add
+                                                </button>
+                                                <button type="button" class="btn btn-danger" id="medication_modal_close"
+                                                        data-dismiss="modal">Close
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <label class="col-form-label" for="email">Medication Category</label>
+                                <table class="table" id="one2many_medication_condition">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Medicine Category</th>
+                                            <th scope="col">
+                                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                                                        data-target="#medication_Modal" id="add_medication_condition">
+                                                    ADD
+                                                </button>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <t t-foreach="medical_history.medication_ids" t-as="medication">
+                                            <tr>
+                                                <td>
+                                                    <span>
+                                                        <t t-esc="medication.category_id.name"/>
+                                                    </span>
+                                                    <input type='hidden' class="category_id" name="category_id"
+                                                           t-att-value='medication.category_id.id'/>
+                                                </td>
+                                                <td>
+                                                    <button class='btn btn-danger btn-sm' type='button'
+                                                            id='medication_remove_row'>
+                                                        Delete
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </t>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div t-attf-class="form-group col-xl-12">
+                                <div id="Surgery_Modal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Surgeries and Treatments</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!--                                            <form id="surgeries_form">-->
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group col-xl-6">
+                                                            <label class="col-form-label" for="name">
+                                                                Surgery Detail
+                                                            </label>
+                                                            <input type="text" id="name" value=""/>
+                                                        </div>
+                                                        <div class="form-group col-xl-6">
+                                                            <label class="col-form-label" for="current_past">
+                                                                Surgery Period
+                                                            </label>
+                                                            <select id="current_past" t-attf-class="form-control">
+                                                                <option value=""></option>
+                                                                <option value="current">
+                                                                    current
+                                                                </option>
+                                                                <option value="past">
+                                                                    past
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--                                            </form>-->
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" id="add_surgery_row">
+                                                    Add
+                                                </button>
+                                                <button type="button" class="btn btn-danger" id="surgery_modal_close"
+                                                        data-dismiss="modal">Close
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <label class="col-form-label" for="email">Surgeries and Treatments</label>
+                                <table class="table" id="one2many_surgery_condition">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Surgery Detail</th>
+                                            <th scope="col">Surgery Period</th>
+                                            <th scope="col">
+                                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                                                        data-target="#Surgery_Modal" id="add_surgery_condition">ADD
+                                                </button>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <t t-foreach="medical_history.surgeries_data_ids" t-as="surgeries_data">
+                                            <tr>
+                                                <td>
+                                                    <span>
+                                                        <t t-esc="surgeries_data.name"/>
+                                                    </span>
+                                                    <input type='hidden' class="name" name="name"
+                                                           t-att-value='surgeries_data.name'/>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <t t-esc="surgeries_data.current_past"/>
+                                                    </span>
+                                                    <input type='hidden' class="current_past"
+                                                           name="current_past"
+                                                           t-att-value='surgeries_data.current_past'/>
+                                                </td>
+
+                                                <td>
+                                                    <button class='btn btn-danger btn-sm' type='button'
+                                                            id='surgery_remove_row'>
+                                                        Delete
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </t>
+
+                                    </tbody>
+                                </table>
+                                <!--                            <input type="hidden" id="last_record_id" t-att-value="one2many_last_id"/>-->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div t-attf-class="form-group col-xl-12">
+                                <div id="injury_Modal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Pain / Injury Location</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group col-xl-6">
+                                                            <label class="col-form-label" for="category_id">
+                                                                Pain / Injury Location
+                                                            </label>
+
+                                                            <select class="form-control"
+                                                                    name="injury_location_id" id="injury_location_id">
+                                                                <option value=""></option>
+                                                                <t t-foreach="injury_location_ids"
+                                                                   t-as="injury_location_id">
+                                                                    <option t-att-value="injury_location_id.id">
+                                                                        <t t-esc="injury_location_id.name"/>
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" id="add_injury_row">
+                                                    Add
+                                                </button>
+                                                <button type="button" class="btn btn-danger" id="injury_modal_close"
+                                                        data-dismiss="modal">Close
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <label class="col-form-label" for="email">Pain / Injury Location</label>
+                                <table class="table" id="one2many_injury_condition">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Pain / Injury Location</th>
+                                            <th scope="col">
+                                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                                                        data-target="#injury_Modal" id="add_injury_condition">
+                                                    ADD
+                                                </button>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <t t-foreach="medical_history.injury_location_ids" t-as="injury_location_id">
+                                            <tr>
+                                                <td>
+                                                    <span>
+                                                        <t t-esc="injury_location_id.injury_location_id.name"/>
+                                                    </span>
+                                                    <input type='hidden' class="injury_location_id"
+                                                           name="injury_location_id"
+                                                           t-att-value='injury_location_id.injury_location_id.id'/>
+                                                </td>
+                                                <td>
+                                                    <button class='btn btn-danger btn-sm' type='button'
+                                                            id='injury_remove_row'>
+                                                        Delete
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </t>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                Any Food Allergy:
+                                <p>
+                                    <select class="form-control logo-dropdowns many2mnay_select select2"
+                                            name="food_allergy_ids"
+                                            id="food_allergy_ids" multiple="multiple">
+                                        <option value=""></option>
+                                        <t t-foreach="food_allergy" t-as="food">
+                                            <option t-att-value="food.id"
+                                                    t-att-selected="food.id in partner.food_allergy_ids.ids">
+                                                <t t-foreach="food" t-as="f">
+                                                    <t t-esc="food.name"/>
+                                                </t>
+                                            </option>
+                                        </t>
+                                    </select>
+                                    <input type="hidden" name="food_allergy_ids"/>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                Any Food Intolerance:
+                                <p>
+                                    <select class="form-control many2mnay_select select2" name="food_intolerance_ids"
+                                            id="food_intolerance_ids" multiple="multiple">
+                                        <option value=""></option>
+                                        <t t-foreach="food_intolerance" t-as="food">
+                                            <option t-att-value="food.id"
+                                                    t-att-selected="food.id in partner.food_intolerance_ids.ids">
+                                                <t t-foreach="food" t-as="f">
+                                                    <t t-esc="f.name"/>
+                                                </t>
+                                            </option>
+                                        </t>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div style="overflow:auto;">
+                            <div style="float:right;">
+                                <input type="submit" style="padding:10px 30px;background: #FED600" value="Save"/>
+                            </div>
+                        </div>
+                        <input type="hidden" name="lifestyle_condition_ids"/>
+                        <input type="hidden" name="surgeries_data_ids"/>
+                        <input type="hidden" name="ailments_data_ids"/>
+                        <input type="hidden" name="medication_ids"/>
+                        <input type="hidden" name="injury_ids"/>
+                        <input type="hidden" name="partner_id" t-att-value="partner.id"/>
+                    </form>
+                </div>
+
+                <div id="section_c" class="hide_sec" style="display:none">
+                    <form id="regFormAddress" class="regForm" method="post" action="/section-c-submit"
+                          enctype="multipart/form-data">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <input type="hidden" name="partner_id" t-att-value="partner.id"/>
+                        <input type="hidden" name="check_point_data_ids" id="check_point_data_ids"/>
+                        <h1>My Profile</h1>
+
+                        <div style="text-align:center;margin-top:40px;">
+                            <span class="step menu_a">Primary Info</span>
+                            <span class="step menu_b">Medical Info</span>
+                            <span class="step menu_c" style="background:#FED600;color:black">Address Info</span>
+                            <!--                                          <span class="step"><a href="/customer-portal-address" style="color:black" target="_blank">Address Info</a></span>-->
+                        </div>
+
+                        <div class="demo_header">
+                            <h4>
+                                <b>Section C: Address Info</b>
+                            </h4>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="text-center">
+                                    <b>Customer ID -
+                                        <t t-esc="partner.cust_number"/>
+                                    </b>
+                                </h3>
+                            </div>
+                        </div>
+                        <t t-if="partner.child_ids">
+                            <table class="table" id="one2many_ailments_condition">
+                                <thead>
+                                    <t t-foreach="partner.child_ids" t-as="child">
+                                        <tr>
+                                            <th scope="col">
+                                                <t t-esc="child.type"/>
+                                            </th>
+                                            <th scope="col">
+                                                <t t-esc="child.street"/>
+                                            </th>
+                                            <th scope="col">
+                                                <a t-attf-href="/user-details/#{slug(child)}"
+                                                   class="btn btn-success btn-sm">Edit
+                                                </a>
+                                            </th>
+                                        </tr>
+                                    </t>
+                                </thead>
+                            </table>
+                        </t>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input id="pac-input" type="text" size="50"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="googleMap" style="width:100%;height:400px;"></div>
+                                <script t-attf-src="https://maps.googleapis.com/maps/api/js?key=#{api_key.value}&amp;libraries=places&amp;callback=myMap"></script>
+                                <!--                                <script t-attf-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVvhjo0M89EhqmPgmswuT_pb8yFhIPtfA&amp;libraries=places&amp;callback=myMap"></script>-->
+                            </div>
+                        </div>
+                        <div class="row pt32">
+                            <div class="col-md-6">
+                                Latitude:
+                                <p>
+                                    <input placeholder="Latitude..." name="lat" id="lat" readonly="readonly"/>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                Longitude:
+                                <p>
+                                    <input placeholder="Longitude..." name="lng" id="lng" readonly="readonly"/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                Line 1:
+                                <p>
+                                    <input placeholder="Line1..." name="line1" id="line1"/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                Name:
+                                <p>
+                                    <input placeholder="Name..." name="name" required="required"/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                Landmark:
+                                <p>
+                                    <input placeholder="Landmark..." name="landmark"/>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                City:
+                                <p>
+                                    <select name="city_id" class="select_style">
+                                        <t t-foreach="cities" t-as="city">
+                                            <option t-att-value="city.id">
+                                                <t t-esc="city.name"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                Mobile:
+                                <p>
+                                    <input placeholder="Mobile..." name="mobile" class="numericOnly" maxlength="10"
+                                           minlength="10"/>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                Address Type:
+                                <p>
+                                    <select name="type" class="select_style">
+                                        <option value="home">Home</option>
+                                        <option value="office">Office</option>
+                                        <option value="contact">Other</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                Delivery Type:
+                                <p>
+                                    <select name="delivery_type" class="select_style" id="delivery_type_select">
+                                        <option value=""></option>
+                                        <option value="doorstep">No Check Point</option>
+                                        <option value="checkpoint">Check Point</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row" id="delivery_notes_field">
+                            <div class="col-md-12">
+                                Delivery Notes:
+                                <p>
+                                    <input placeholder="Delivery Notes..." name="delivery_note" id="delivery_note"/>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="row" id="check_point_field" style="display:none">
+                            <div t-attf-class="form-group col-xl-12">
+                                <div id="Check_points" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Check Points</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!--                                            <form id="surgeries_form">-->
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-check">
+                                                            <label class="form-check-label" for="pref_checkpoint">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                       id="pref_checkpoint"/>
+                                                                Preferred Checkpoint
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group col-xl-12 pt16">
+                                                            <label class="col-form-label" for="gate_no">
+                                                                Check Point/ Gate Number
+                                                            </label>
+                                                            <input type="text" id="gate_no"/>
+                                                        </div>
+
+                                                        <div class="form-group col-xl-12">
+                                                            <label class="col-form-label" for="protocol">
+                                                                Protocol
+                                                            </label>
+                                                            <input type="text" id="protocol"/>
+                                                        </div>
+                                                        <div class="form-group col-xl-12">
+                                                            <label class="col-form-label" for="name">
+                                                                Mobile number of security guard / manager
+                                                            </label>
+                                                            <input type="text" id="mobile_guard" class="numericOnly"
+                                                                   minlength="10" maxlength="10"/>
+                                                        </div>
+                                                        <div class="form-group col-xl-12">
+                                                            <label class="col-form-label" for="name">
+                                                                Any Other Notes
+                                                            </label>
+                                                            <input type="text" id="oter_note"/>
+                                                            <!--                                                        <textarea name="oter_note" cols="40" rows="5"></textarea>-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--                                            </form>-->
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" id="add_check_point_row">
+                                                    Add
+                                                </button>
+                                                <button type="button" class="btn btn-danger" id="check_point_close"
+                                                        data-dismiss="modal">Close
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <label class="col-form-label" for="email">Check Point</label>
+                                <table class="table" id="one2many_check_point">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Pref. Check Point</th>
+                                            <th scope="col">Check Point/ Gate Number</th>
+                                            <th scope="col">Protocol</th>
+                                            <th scope="col">Mobile number</th>
+                                            <th scope="col">Any Other Notes</th>
+                                            <th scope="col">
+                                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                                                        data-target="#Check_points" id="add_check_points">ADD
+                                                </button>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <!--                                    <t t-foreach="medical_history.surgeries_data_ids" t-as="surgeries_data">-->
+                                        <!--                                        <tr>-->
+                                        <!--                                            <td>-->
+                                        <!--                                                <span>-->
+                                        <!--                                                    <t t-esc="surgeries_data.name"/>-->
+                                        <!--                                                </span>-->
+                                        <!--                                                <input type='hidden' class="name" name="name"-->
+                                        <!--                                                       t-att-value='surgeries_data.name'/>-->
+                                        <!--                                            </td>-->
+                                        <!--                                            <td>-->
+                                        <!--                                                <span>-->
+                                        <!--                                                    <t t-esc="surgeries_data.current_past"/>-->
+                                        <!--                                                </span>-->
+                                        <!--                                                <input type='hidden' class="current_past"-->
+                                        <!--                                                       name="current_past"-->
+                                        <!--                                                       t-att-value='surgeries_data.current_past'/>-->
+                                        <!--                                            </td>-->
+
+                                        <!--                                            <td>-->
+                                        <!--                                                <button class='btn btn-danger btn-sm' type='button'-->
+                                        <!--                                                        id='surgery_remove_row'>-->
+                                        <!--                                                    Delete-->
+                                        <!--                                                </button>-->
+                                        <!--                                            </td>-->
+                                        <!--                                        </tr>-->
+                                        <!--                                    </t>-->
+
+                                    </tbody>
+                                </table>
+                                <!--                            <input type="hidden" id="last_record_id" t-att-value="one2many_last_id"/>-->
+                            </div>
+                        </div>
+
+
+                        <div style="overflow:auto;">
+                            <div style="float:right;">
+                                <input type="submit" style="padding:10px 30px;background: #FED600" value="Save"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="user_details" name="User Details">
+        <t t-call="website.layout">
+            <div id="section_c" class="hide_sec">
+                <form id="regFormAddress" class="regForm" method="post" action="/user-detail-submit"
+                      enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="partner_id" t-att-value="partner.id"/>
+                    <input type="hidden" name="check_point_data_ids" id="check_point_data_ids"/>
+                    <h1>My Profile</h1>
+
+                    <!--                        <div style="text-align:center;margin-top:40px;">-->
+                    <!--                            <span class="step menu_a">Primary Info</span>-->
+                    <!--                            <span class="step menu_b">Medical Info</span>-->
+                    <!--                            <span class="step menu_c" style="background:#FED600;color:black">Address Info</span>-->
+                    <!--                        </div>-->
+
+                    <div class="demo_header">
+                        <h4>
+                            <b>Section C: Address Info</b>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="text-center">
+                                <b>Customer ID -
+                                    <t t-esc="partner.cust_number"/>
+                                </b>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input id="pac-input" type="text" size="50"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="googleMap" style="width:100%;height:400px;"></div>
+                            <script t-attf-src="https://maps.googleapis.com/maps/api/js?key=#{api_key.value}&amp;libraries=places&amp;callback=myMap"></script>
+                        </div>
+                    </div>
+                    <div class="row pt32">
+                        <div class="col-md-6">
+                            Latitude:
+                            <p>
+                                <input placeholder="Latitude..." name="lat" id="lat" t-att-value="partner.latitude"
+                                       readonly="readonly"/>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            Longitude:
+                            <p>
+                                <input placeholder="Longitude..." name="lng" id="lng" t-att-value="partner.longitude"
+                                       readonly="readonly"/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            Line 1:
+                            <p>
+                                <input placeholder="Line1..." name="line1" id="line1" t-att-value="partner.street"/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            Name:
+                            <p>
+                                <input placeholder="Name..." name="name" t-att-value="partner.name"/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            Landmark:
+                            <p>
+                                <input placeholder="Landmark..." name="landmark" t-att-value="partner.landmark"/>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            City:
+                            <p>
+                                <select name="city_id" class="select_style">
+                                    <t t-foreach="cities" t-as="city">
+                                        <t t-if="city.id == partner.city.id">
+                                            <option t-att-value="city.id" selected="selected">
+                                                <t t-esc="city.name"/>
+                                            </option>
+                                        </t>
+                                        <t t-else="">
+                                            <option t-att-value="city.id">
+                                                <t t-esc="city.name"/>
+                                            </option>
+                                        </t>
+                                    </t>
+                                </select>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            Mobile:
+                            <p>
+                                <input placeholder="Mobile..." name="mobile" class="numericOnly" maxlength="10"
+                                       minlength="10" t-att-value="partner.mobile"/>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            Address Type:
+                            <p>
+                                <select name="type" class="select_style">
+                                    <t t-if="partner.type == 'home'">
+                                        <option value="home" selected="selected">Home</option>
+                                        <option value="office">Office</option>
+                                        <option value="contact">Other</option>
+                                    </t>
+                                    <t t-if="partner.type == 'office'">
+                                        <option value="home">Home</option>
+                                        <option value="office" selected="selected">Office</option>
+                                        <option value="contact">Other</option>
+                                    </t>
+                                    <t t-if="partner.type == 'contact'">
+                                        <option value="home">Home</option>
+                                        <option value="office">Office</option>
+                                        <option value="contact" selected="selected">Other</option>
+                                    </t>
+
+                                </select>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            Delivery Type:
+                            <p>
+                                <select name="delivery_type" class="select_style" id="delivery_type_select_edit">
+                                    <option value=""></option>
+                                    <t t-if="partner.delivery_type == 'doorstep'">
+                                        <option value="doorstep" selected="selected">No Check Point</option>
+                                        <option value="checkpoint">Check Point</option>
+                                    </t>
+                                    <t t-elif="partner.delivery_type == 'checkpoint'">
+                                        <option value="doorstep">No Check Point</option>
+                                        <option value="checkpoint" selected="selected">Check Point</option>
+                                    </t>
+                                    <t t-else="">
+                                        <option value="doorstep">No Check Point</option>
+                                        <option value="checkpoint">Check Point</option>
+                                    </t>
+                                </select>
+                            </p>
+                        </div>
+                    </div>
+                    <!--                    <t t-if="partner.delivery_type == 'checkpoint'">-->
+                    <div id="check_point_field_edit"
+                         t-attf-class="row {{'d-none' if not partner.delivery_type == 'checkpoint' else ''}}">
+                        <div t-attf-class="form-group col-xl-12">
+                            <div id="Check_points" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Check Points</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--                                            <form id="surgeries_form">-->
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-check">
+                                                        <label class="form-check-label" for="pref_checkpoint">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                   id="pref_checkpoint"/>
+                                                            Preferred Checkpoint
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-group col-xl-12 pt16">
+                                                        <label class="col-form-label" for="gate_no">
+                                                            Check Point/ Gate Number
+                                                        </label>
+                                                        <input type="text" id="gate_no"/>
+                                                    </div>
+
+                                                    <div class="form-group col-xl-12">
+                                                        <label class="col-form-label" for="protocol">
+                                                            Protocol
+                                                        </label>
+                                                        <input type="text" id="protocol"/>
+                                                    </div>
+                                                    <div class="form-group col-xl-12">
+                                                        <label class="col-form-label" for="name">
+                                                            Mobile number of security guard / manager
+                                                        </label>
+                                                        <input type="text" id="mobile_guard" class="numericOnly"
+                                                               minlength="10" maxlength="10"/>
+                                                    </div>
+                                                    <div class="form-group col-xl-12">
+                                                        <label class="col-form-label" for="name">
+                                                            Any Other Notes
+                                                        </label>
+                                                        <input type="text" id="oter_note"/>
+                                                        <!--                                                        <textarea name="oter_note" cols="40" rows="5"></textarea>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--                                            </form>-->
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" id="add_check_point_row">
+                                                Add
+                                            </button>
+                                            <button type="button" class="btn btn-danger" id="check_point_close"
+                                                    data-dismiss="modal">Close
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <label class="col-form-label" for="email">Check Point</label>
+                            <table class="table" id="one2many_check_point">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Pref. Check Point</th>
+                                        <th scope="col">Check Point/ Gate Number</th>
+                                        <th scope="col">Protocol</th>
+                                        <th scope="col">Mobile number</th>
+                                        <th scope="col">Any Other Notes</th>
+                                        <th scope="col">
+                                            <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                                                    data-target="#Check_points" id="add_check_points">ADD
+                                            </button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <t t-foreach="partner.partner_check_points_ids" t-as="check_point_data">
+                                        <tr>
+                                            <td>
+                                                <span>
+                                                    <t t-esc="check_point_data.pref_checkpoint"/>
+                                                </span>
+                                                <input type='hidden' class="pref_checkpoint" name="pref_checkpoint"
+                                                       t-att-value='check_point_data.pref_checkpoint'/>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <t t-esc="check_point_data.gate_no"/>
+                                                </span>
+                                                <input type='hidden' class="gate_no" name="gate_no"
+                                                       t-att-value='check_point_data.gate_no'/>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <t t-esc="check_point_data.protocol"/>
+                                                </span>
+                                                <input type='hidden' class="protocol" name="protocol"
+                                                       t-att-value='check_point_data.protocol'/>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <t t-esc="check_point_data.mobile"/>
+                                                </span>
+                                                <input type='hidden' class="mobile_guard" name="mobile_guard"
+                                                       t-att-value='check_point_data.mobile'/>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <t t-esc="check_point_data.notes"/>
+                                                </span>
+                                                <input type='hidden' class="oter_note" name="oter_note"
+                                                       t-att-value='check_point_data.notes'/>
+                                            </td>
+
+
+                                            <td>
+                                                <button class='btn btn-danger btn-sm' type='button'
+                                                        id='checkpoint_remove_row'>
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </t>
+
+                                </tbody>
+                            </table>
+                            <!--                            <input type="hidden" id="last_record_id" t-att-value="one2many_last_id"/>-->
+                        </div>
+                    </div>
+                    <!--                    </t>-->
+                    <!--                    <t t-else="">-->
+                    <div id="delivery_notes_field_edit"
+                         t-attf-class="row {{'d-none' if partner.delivery_type == 'checkpoint' else ''}}">
+                        <div class="col-md-12">
+                            Delivery Notes:
+                            <p>
+                                <input placeholder="Delivery Notes..." name="delivery_note" id="delivery_note"
+                                       t-att-value="partner.delivery_note"/>
+                            </p>
+                        </div>
+                    </div>
+                    <!--                    </t>-->
+                    <div style="overflow:auto;">
+                        <div style="float:right;">
+                            <input type="submit" style="padding:10px 30px;background: #FED600" value="Save"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+
+    <template id="section_a_form_submitted" name="Section A Thanks">
+        <t t-call="website.layout">
+            <div id="notfound">
+                <div class="notfound-bg"></div>
+                <div class="notfound pt120">
+                    <div class="notfound-404" style="opacity: 0.5 !important;">
+                        <!--                        <h1 style="color: black">Thank you!</h1>-->
+                    </div>
+                    <h2 style="color: black">Thank you, you have successfully saved your Primary Info.
+                    </h2>
+                    <a href="/customer-portal" class="contact-btn">Back To My Profile</a>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="section_b_form_submitted" name="Section B Thanks">
+        <t t-call="website.layout">
+            <div id="notfound">
+                <div class="notfound-bg"></div>
+                <div class="notfound pt120">
+                    <div class="notfound-404" style="opacity: 0.5 !important;">
+                        <!--                        <h1 style="color: black">Thank you!</h1>-->
+                    </div>
+                    <h2 style="color: black">Thank you, you have successfully saved your Medical Info.
+                    </h2>
+                    <a href="/customer-portal" class="contact-btn">Back To My Profile</a>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <template id="section_c_form_submitted" name="Section C Thanks">
+        <t t-call="website.layout">
+            <div id="notfound">
+                <div class="notfound-bg"></div>
+                <div class="notfound pt120">
+                    <div class="notfound-404" style="opacity: 0.5 !important;">
+                        <!--                        <h1 style="color: black">Thank you!</h1>-->
+                    </div>
+                    <h2 style="color: black">Thank you, you have successfully saved your Address Info.
+                    </h2>
+                    <a href="/customer-portal" class="contact-btn">Back To My Profile</a>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_remove_edit" inherit_id="portal.portal_layout">
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <div id="wrap" class='o_portal_wrap'>
+                <div class="container mb64">
+                    <t t-if="my_details">
+                        <div class="row justify-content-between mt-4">
+                            <div t-attf-class="col-12 col-md col-lg-6">
+                                <t t-raw="0"/>
+                            </div>
+                            <div id="o_my_sidebar" class="col-12 col-md col-lg-4 col-xl-3 o_my_sidebar">
+                                <div class="o_my_contact" t-if="sales_user">
+                                    <t t-call="portal.portal_contact"/>
+                                </div>
+                                <div class="o_portal_my_details">
+                                    <h4>Your Details
+                                        <a role="button" href="/my/account" class="btn btn-sm btn-link"></a>
+                                    </h4>
+                                    <hr class="mt-1 mb-0"/>
+                                    <div t-field="user_id.partner_id"
+                                         t-options='{"widget": "contact", "fields": ["email", "phone", "address", "name"]}'/>
+                                </div>
+                                <div class="o_my_archives" t-if="archive_groups">
+                                    <t t-call="portal.portal_archive_groups"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <t t-raw="0"/>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
+
+
+
+
+
