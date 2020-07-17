@@ -4,6 +4,7 @@
         <t t-call="website.layout">
             <section>
                 <div class="oe_structure">
+                    <!-- ========== MAIN CONTENT ========== -->
                     <main id="content" role="main" style="padding-top: 112px;">
                         <!-- Hero Section -->
                         <div class="container space-top-3 space-top-lg-4">
@@ -328,6 +329,7 @@
                         </div>
                         <!-- End Testimonials Section -->
                     </main>
+                    <!-- ========== END MAIN CONTENT ========== -->
                 </div>
             </section>
         </t>

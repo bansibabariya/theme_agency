@@ -16,6 +16,8 @@
         'views/pricing.xml',
         'views/services-agency.xml',
         'views/terms.xml',
+        'views/landing-app-saas.xml',
+        'views/landing-app-workflow.xml',
     ],
     'application': True,
     'installable': True,

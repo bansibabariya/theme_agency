@@ -29,4 +29,12 @@ class CustomerPortal(http.Controller):
 
     @http.route(["/terms"], type='http', auth="public", website=True)
     def terms(self, page=0, *args, **kwargs):
-        return request.render('website_agency.terms', {})
+        return request.render('website_agency.terms', {})\
+
+    @http.route(["/landings-app-saas"], type='http', auth="public", website=True)
+    def landings_app_saas(self, page=0, *args, **kwargs):
+        return request.render('website_agency.landings-app-saas', {})
+
+    @http.route(["/landings-app-workflow"], type='http', auth="public", website=True)
+    def landings_app_workflow(self, page=0, *args, **kwargs):
+        return request.render('website_agency.landings-app-workflow', {})

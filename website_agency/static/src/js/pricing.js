@@ -5,14 +5,14 @@ $( document ).ready(function() {
         var stickyBlock = new HSStickyBlock($(this)).init();
       });
 
+      // initialization of scroll nav
+      $('.js-scroll-nav').each(function () {
+        var scrollNav = new HSScrollNav($(this)).init();
+      });
+
       // initialization of slick carousel
       $('.js-slick-carousel').each(function() {
         var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
-      });
-
-      // initialization of show animations
-      $('.js-animation-link').each(function () {
-        var showAnimation = new HSShowAnimation($(this)).init();
       });
 
       // initialization of toggle switch
@@ -20,8 +20,5 @@ $( document ).ready(function() {
         var toggleSwitch = new HSToggleSwitch($(this)).init();
       });
 
-      // initialization of go to
-      $('.js-go-to').each(function () {
-        var goTo = new HSGoTo($(this)).init();
-      });
+
     });

@@ -590,17 +590,6 @@
                         </div>
                         <!-- End FAQ Section -->
                     </main>
-                    <!-- JS Plugins Init. -->
-<!--                        <script>-->
-<!--                            -->
-<!--                        </script>-->
-
-                        <!-- IE Support -->
-<!--                        <script>-->
-<!--                        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){-->
-<!--                            document.write('<script src="/website_agency/static/src/vendor/polifills.js"/>');-->
-<!--                            }-->
-<!--                        </script>-->
                 </div>
             </section>
         </t>

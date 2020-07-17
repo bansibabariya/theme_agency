@@ -382,10 +382,10 @@
                                                                        href="../landings/app-ui-kit.html">UI Kit
                                                                     </a>
                                                                     <a class="dropdown-item"
-                                                                       href="../landings/app-saas.html">SaaS
+                                                                       href="/landings-app-saas">SaaS
                                                                     </a>
                                                                     <a class="dropdown-item"
-                                                                       href="../landings/app-workflow.html">Workflow
+                                                                       href="/landings-app-workflow">Workflow
                                                                     </a>
                                                                     <a class="dropdown-item"
                                                                        href="../landings/app-payment.html">Payment
