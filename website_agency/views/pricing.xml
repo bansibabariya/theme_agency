@@ -4,7 +4,7 @@
         <t t-call="website.layout">
             <section>
                 <div class="oe_structure">
-                    <main id="content" role="main" style="padding-top: 112px;">
+                    <main id="content" role="main">
                         <div class="overflow-hidden">
                             <!-- Hero Section -->
                             <div class="bg-img-hero"

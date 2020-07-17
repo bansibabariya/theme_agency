@@ -107,9 +107,11 @@
                                         <div class="d-flex align-items-center">
                                             <div class="search-push-top-banner-container">
                                                 <img class="img-fluid search-push-top-banner-img"
-                                                     src="/website_agency/static/src/img/mockups/img3.png" alt="Image Description"/>
+                                                     src="/website_agency/static/src/img/mockups/img3.png"
+                                                     alt="Image Description"/>
                                                 <img class="img-fluid search-push-top-banner-img"
-                                                     src="/website_agency/static/src/img/mockups/img2.png" alt="Image Description"/>
+                                                     src="/website_agency/static/src/img/mockups/img2.png"
+                                                     alt="Image Description"/>
                                             </div>
 
                                             <div>
@@ -148,7 +150,8 @@
                 "hideOnScroll": "true"
                }'>
                                     <img class="dropdown-item-icon mr-2"
-                                         src="/website_agency/static/src/vendor/flag-icon-css/flags/4x3/us.svg" alt="SVG"/>
+                                         src="/website_agency/static/src/vendor/flag-icon-css/flags/4x3/us.svg"
+                                         alt="SVG"/>
                                     <span class="d-inline-block d-sm-none">US</span>
                                     <span class="d-none d-sm-inline-block">United States</span>
                                 </a>
@@ -546,7 +549,7 @@
 
                                                     <div id="navSubmenuPagesLogin" class="hs-sub-menu dropdown-menu"
                                                          aria-labelledby="navLinkPagesLogin" style="min-width: 230px;">
-                                                        <a class="dropdown-item" href="login.html">Login</a>
+                                                        <a class="dropdown-item" href="/web/login">Login</a>
                                                         <a class="dropdown-item" href="signup.html">Signup</a>
                                                         <a class="dropdown-item" href="recover-account.html">Recover
                                                             Account
@@ -926,7 +929,8 @@
                                                     <a class="navbar-promo-link" href="../../documentation/index.html">
                                                         <div class="media align-items-center">
                                                             <img class="navbar-promo-icon"
-                                                                 src="/website_agency/static/src/svg/icons/icon-2.svg" alt="SVG"/>
+                                                                 src="/website_agency/static/src/svg/icons/icon-2.svg"
+                                                                 alt="SVG"/>
                                                             <div class="media-body">
                                                                 <span class="navbar-promo-title">
                                                                     Documentation
@@ -947,7 +951,8 @@
                                                     <a class="navbar-promo-link" href="../../snippets/index.html">
                                                         <div class="media align-items-center">
                                                             <img class="navbar-promo-icon"
-                                                                 src="/website_agency/static/src/svg/icons/icon-1.svg" alt="SVG"/>
+                                                                 src="/website_agency/static/src/svg/icons/icon-1.svg"
+                                                                 alt="SVG"/>
                                                             <div class="media-body">
                                                                 <span class="navbar-promo-title">Snippets</span>
                                                                 <small class="navbar-promo-text">Start building</small>
@@ -1008,8 +1013,39 @@
                     </div>
                 </div>
             </header>
-        </xpath>
+            <header id="header_login" class="header d-none header-bg-transparent header-abs-top">
+                <div class="header-section">
+                    <div id="logoAndNav" class="container-fluid">
+                        <!-- Nav -->
+                        <nav class="navbar navbar-expand header-navbar">
+                            <!-- White Logo -->
+                            <a class="d-none d-lg-flex navbar-brand header-navbar-brand" href="../landings/index.html"
+                               aria-label="Front">
+                                <img src="/website_agency/static/src/svg/logos/logo-white.svg" alt="Logo"/>
+                            </a>
+                            <!-- End White Logo -->
 
+                            <!-- Default Logo -->
+                            <a class="d-flex d-lg-none navbar-brand header-navbar-brand header-navbar-brand-collapsed"
+                               href="/" aria-label="Front">
+                                <img src="/website_agency/static/src/svg/logos/logo.svg" alt="Logo"/>
+                            </a>
+                            <!-- End Default Logo -->
+
+                            <!-- Button -->
+                            <div class="ml-auto">
+                                <a class="btn btn-sm btn-link text-body" href="/">
+                                    <i class="fas fa-angle-left fa-sm mr-1"></i>
+                                    Go to main
+                                </a>
+                            </div>
+                            <!-- End Button -->
+                        </nav>
+                        <!-- End Nav -->
+                    </div>
+                </div>
+            </header>
+        </xpath>
 
 
     </template>

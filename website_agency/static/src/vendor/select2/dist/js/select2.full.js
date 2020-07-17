@@ -1152,7 +1152,7 @@ S2.define('select2/results',[
     container.on('close', function () {
       // When the dropdown is closed, aria-expended="false"
       self.$results.attr('aria-expanded', 'false');
-      self.$results.attr('aria-hidden', 'true');
+      self.$results.attr('aria-hidden', 'false');
       self.$results.removeAttr('aria-activedescendant');
     });
 
@@ -5436,7 +5436,7 @@ S2.define('select2/core',[
 
     // Hide the original select
     $element.addClass('select2-hidden-accessible');
-    $element.attr('aria-hidden', 'true');
+    $element.attr('aria-hidden', 'false');
 
     // Synchronize any monitored attributes
     this._syncAttributes();
@@ -6003,7 +6003,7 @@ S2.define('select2/core',[
     var $container = $(
       '<span class="select2 select2-container">' +
         '<span class="selection"></span>' +
-        '<span class="dropdown-wrapper" aria-hidden="true"></span>' +
+        '<span class="dropdown-wrapper" aria-hidden="false"></span>' +
       '</span>'
     );
 

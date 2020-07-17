@@ -78,7 +78,7 @@ define([
 
     // Hide the original select
     $element.addClass('select2-hidden-accessible');
-    $element.attr('aria-hidden', 'true');
+    $element.attr('aria-hidden', 'false');
 
     // Synchronize any monitored attributes
     this._syncAttributes();
@@ -645,7 +645,7 @@ define([
     var $container = $(
       '<span class="select2 select2-container">' +
         '<span class="selection"></span>' +
-        '<span class="dropdown-wrapper" aria-hidden="true"></span>' +
+        '<span class="dropdown-wrapper" aria-hidden="false"></span>' +
       '</span>'
     );
 

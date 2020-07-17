@@ -10,6 +10,7 @@
         'views/assets.xml',
         'views/header.xml',
         'views/footer.xml',
+        'views/login.xml',
         'views/about-agency.xml',
         'views/customers.xml',
         'views/customer-story.xml',
