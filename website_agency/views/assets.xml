@@ -6,9 +6,14 @@
             <!-- CSS Implementing Plugins -->
             <link href="/website_agency/static/src/vendor/font-awesome/css/all.min.css" rel="stylesheet"/>
             <link href="/website_agency/static/src/vendor/hs-mega-menu/dist/hs-mega-menu.min.css" rel="stylesheet"/>
+            <link href="/website_agency/static/src/vendor/dzsparallaxer/dzsparallaxer.css" rel="stylesheet"/>
+            <link href="/website_agency/static/src/vendor/slick-carousel/slick/slick.css" rel="stylesheet"/>
 
             <!-- CSS Front Template -->
             <link href="/website_agency/static/src/css/theme.css" rel="stylesheet"/>
+
+            <!-- Font -->
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;display=swap" rel="stylesheet"/>
 
             <!-- JS Implementing Plugins -->
             <script type="text/javascript" src="/website_agency/static/src/vendor/hs-header/dist/hs-header.min.js"></script>
@@ -22,10 +27,12 @@
             <script type="text/javascript" src="/website_agency/static/src/vendor/slick-carousel/slick/slick.js"></script>
             <script type="text/javascript" src="/website_agency/static/src/vendor/hs-sticky-block/dist/hs-sticky-block.min.js"></script>
             <script type="text/javascript" src="/website_agency/static/src/vendor/hs-scroll-nav/dist/hs-scroll-nav.min.js"></script>
+            <script type="text/javascript" src="/website_agency/static/src/vendor/dzsparallaxer/dzsparallaxer.js"></script>
 
             <!-- JS Front -->
             <script type="text/javascript" src="/website_agency/static/src/js/hs.core.js"></script>
             <script type="text/javascript" src="/website_agency/static/src/js/hs.validation.js"></script>
+            <script type="text/javascript" src="/website_agency/static/src/js/hs.slick-carousel.js"></script>
             <script type="text/javascript" src="/website_agency/static/src/js/megamenu.js"></script>
             <script type="text/javascript" src="/website_agency/static/src/js/pricing.js"></script>
 

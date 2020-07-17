@@ -232,16 +232,16 @@
                                                 <div class="card-body p-5">
                                                     <div class="js-slick-carousel slick"
                                                          data-hs-slick-carousel-options='{
-                         "fade": true,
-                         "dots": true,
-                         "dotsClass": "slick-pagination mt-5"
-                       }'>
+                                                         "fade": true,
+                                                         "dots": true,
+                                                         "dotsClass": "slick-pagination mt-5"
+                                                       }'>
                                                         <!-- Testimonials -->
                                                         <div class="js-slide">
                                                             <!-- SVG Quote -->
                                                             <figure class="mb-4">
-<!--                                                                <svg xmlns:xlink="http://www.w3.org/1999/xlink"-->
-<!--                                                                     xmlns="http://www.w3.org/2000/svg" x="0px"-->
+<!--                                                                <svg xmlns="http://www.w3.org/2000/svg"-->
+<!--                                                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"-->
 <!--                                                                     y="0px" width="40px" height="40px"-->
 <!--                                                                     viewBox="0 0 8 8"-->
 <!--                                                                     style="enable-background:new 0 0 8 8;"-->
@@ -282,8 +282,8 @@
                                                         <div class="js-slide">
                                                             <!-- SVG Quote -->
                                                             <figure class="mb-4">
-<!--                                                                <svg xmlns:xlink="http://www.w3.org/1999/xlink"-->
-<!--                                                                     xmlns="http://www.w3.org/2000/svg" x="0px"-->
+<!--                                                                <svg xmlns="http://www.w3.org/2000/svg"-->
+<!--                                                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"-->
 <!--                                                                     y="0px" width="40px" height="40px"-->
 <!--                                                                     viewBox="0 0 8 8"-->
 <!--                                                                     style="enable-background:new 0 0 8 8;"-->

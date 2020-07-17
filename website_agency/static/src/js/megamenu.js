@@ -17,6 +17,11 @@ $( document ).ready(function() {
     var showAnimation = new HSShowAnimation($(this)).init();
   });
 
+  // initialization of slick carousel
+  $('.js-slick-carousel').each(function() {
+    var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
+  });
+
   // initialization of form validation
   $('.js-validate').each(function() {
     $.HSCore.components.HSValidation.init($(this), {
