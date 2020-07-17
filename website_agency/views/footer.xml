@@ -48,7 +48,7 @@
                                 <!-- Nav Link -->
                                 <ul class="nav nav-sm nav-x-0 nav-white flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">About</a>
+                                        <a class="nav-link" href="/about-agency">About</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Careers
@@ -59,7 +59,7 @@
                                         <a class="nav-link" href="#">Blog</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Customers</a>
+                                        <a class="nav-link" href="/customers">Customers</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Hire us</a>
@@ -83,7 +83,7 @@
                                         <a class="nav-link" href="#">Integrations</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Pricing</a>
+                                        <a class="nav-link" href="/pricing">Pricing</a>
                                     </li>
                                 </ul>
                                 <!-- End Nav Link -->

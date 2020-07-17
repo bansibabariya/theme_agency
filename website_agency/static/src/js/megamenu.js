@@ -1,4 +1,4 @@
-$(document).on('ready', function () {
+$( document ).ready(function() {
   // initialization of header
   var header = new HSHeader($('#header')).init();
 
