@@ -7,6 +7,7 @@
     'author': 'Bansi',
     'depends': ['website'],
     'data': [
+        'views/about-agency.xml',
         # 'views/assets.xml',
         # 'views/customer_portal_template.xml',
     ],
