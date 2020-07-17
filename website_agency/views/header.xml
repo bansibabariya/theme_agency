@@ -1,7 +1,7 @@
 <odoo>
 
     <!-- ========== HEADER ========== -->
-    <template id="stan_top_header" inherit_id="portal.frontend_layout">
+    <template id="agency_top_header" inherit_id="portal.frontend_layout">
         <xpath expr="//header" position="replace">
             <header id="header"
                     class="header header-box-shadow-on-scroll header-abs-top header-bg-transparent header-show-hide"
