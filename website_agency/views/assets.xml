@@ -4,7 +4,7 @@
         <xpath expr="." position="inside">
 
             <!-- CSS Implementing Plugins -->
-<!--            <link href="/website_agency/static/src/vendor/font-awesome/css/all.min.css" rel="stylesheet"/>-->
+            <link href="/website_agency/static/src/vendor/font-awesome/css/all.min.css" rel="stylesheet"/>
             <link href="/website_agency/static/src/vendor/hs-mega-menu/dist/hs-mega-menu.min.css" rel="stylesheet"/>
             <link href="/website_agency/static/src/vendor/dzsparallaxer/dzsparallaxer.css" rel="stylesheet"/>
             <link href="/website_agency/static/src/vendor/slick-carousel/slick/slick.css" rel="stylesheet"/>
