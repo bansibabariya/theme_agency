@@ -23,7 +23,7 @@
                             <div class="row">
                                 <div id="stickyBlockStartPoint" class="col-md-4 col-lg-3 mb-7 mb-md-0">
                                     <!-- Nav -->
-                                    <nav class="js-sticky-block card shadow-none bg-light"
+                                    <nav class="js-sticky-block card shadow-none bg-light" style="background-color: #9fbef2 !important;"
                                          data-hs-sticky-block-options='{
                                      "parentSelector": "#stickyBlockStartPoint",
                                      "targetSelector": "#logoAndNav",
