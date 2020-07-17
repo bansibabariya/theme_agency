@@ -311,7 +311,7 @@ define([
     container.on('close', function () {
       // When the dropdown is closed, aria-expended="false"
       self.$results.attr('aria-expanded', 'false');
-      self.$results.attr('aria-hidden', 'false');
+      self.$results.attr('aria-hidden', 'true');
       self.$results.removeAttr('aria-activedescendant');
     });
 

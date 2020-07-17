@@ -1606,7 +1606,7 @@
       if (title) {
         extraAttributes['aria-labelledby'] = "".concat(config.replacementClass, "-title-").concat(nextUniqueId());
       } else {
-        extraAttributes['aria-hidden'] = 'false';
+        extraAttributes['aria-hidden'] = 'true';
         extraAttributes['focusable'] = 'false';
       }
     }
@@ -1872,7 +1872,7 @@
     }
 
     if (config.autoA11y && !title) {
-      extra.attributes['aria-hidden'] = 'false';
+      extra.attributes['aria-hidden'] = 'true';
     }
 
     return picked.resolve([node, makeLayersTextAbstract({
@@ -2292,7 +2292,7 @@
         if (title) {
           attributes['aria-labelledby'] = "".concat(config.replacementClass, "-title-").concat(nextUniqueId());
         } else {
-          attributes['aria-hidden'] = 'false';
+          attributes['aria-hidden'] = 'true';
           attributes['focusable'] = 'false';
         }
       }
