@@ -20,12 +20,14 @@
             <script type="text/javascript" src="/website_agency/static/src/vendor/hs-toggle-switch/dist/hs-toggle-switch.min.js"></script>
             <script type="text/javascript" src="/website_agency/static/src/vendor/appear.js"></script>
             <script type="text/javascript" src="/website_agency/static/src/vendor/slick-carousel/slick/slick.js"></script>
+            <script type="text/javascript" src="/website_agency/static/src/vendor/hs-sticky-block/dist/hs-sticky-block.min.js"></script>
+            <script type="text/javascript" src="/website_agency/static/src/vendor/hs-scroll-nav/dist/hs-scroll-nav.min.js"></script>
 
             <!-- JS Front -->
             <script type="text/javascript" src="/website_agency/static/src/js/hs.core.js"></script>
             <script type="text/javascript" src="/website_agency/static/src/js/hs.validation.js"></script>
             <script type="text/javascript" src="/website_agency/static/src/js/megamenu.js"></script>
-<!--            <script type="text/javascript" src="/website_agency/static/src/js/pricing.js"></script>-->
+            <script type="text/javascript" src="/website_agency/static/src/js/pricing.js"></script>
 
         </xpath>
     </template>

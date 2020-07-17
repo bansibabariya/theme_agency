@@ -1,26 +1,8 @@
 $( document ).ready(function() {
-      // initialization of header
-      var header = new HSHeader($('#header')).init();
 
-      // initialization of mega menu
-      var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
-        desktop: {
-          position: 'left'
-        }
-      }).init();
-
-      // initialization of unfold
-      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
-
-      // initialization of form validation
-      $('.js-validate').each(function() {
-        $.HSCore.components.HSValidation.init($(this), {
-          rules: {
-            confirmPassword: {
-              equalTo: '#signupPassword'
-            }
-          }
-        });
+       // initialization of sticky blocks
+      $('.js-sticky-block').each(function () {
+        var stickyBlock = new HSStickyBlock($(this)).init();
       });
 
       // initialization of slick carousel

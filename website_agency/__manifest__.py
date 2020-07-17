@@ -15,6 +15,7 @@
         'views/customer-story.xml',
         'views/pricing.xml',
         'views/services-agency.xml',
+        'views/terms.xml',
     ],
     'application': True,
     'installable': True,

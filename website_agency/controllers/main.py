@@ -25,4 +25,8 @@ class CustomerPortal(http.Controller):
 
     @http.route(["/services-agency"], type='http', auth="public", website=True)
     def services_agency(self, page=0, *args, **kwargs):
-        return request.render('website_agency.services-agency', {})
+        return request.render('website_agency.services-agency', {})\
+
+    @http.route(["/terms"], type='http', auth="public", website=True)
+    def terms(self, page=0, *args, **kwargs):
+        return request.render('website_agency.terms', {})
