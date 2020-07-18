@@ -120,7 +120,7 @@
                         <div class="row no-gutters">
                             <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-top-3 space-lg-0">
                                 <!-- Form -->
-                                <form class="js-validate">
+<!--                                <form class="js-validate">-->
                                     <!-- Title -->
                                     <div class="mb-5 mb-md-7">
                                         <h1 class="h2">Welcome back</h1>
@@ -128,13 +128,19 @@
                                     </div>
                                     <!-- End Title -->
 
+
+                                     <form role="form" t-attf-action="/web/login{{ '?debug' if debug else '' }}"
+                                  method="post"
+                                  onsubmit="this.action = this.action + location.hash">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
                                     <!-- Form Group -->
                                     <div class="js-form-message form-group">
                                         <label class="input-label" for="signinSrEmail">Email address</label>
-                                        <input type="email" class="form-control" name="email" id="signinSrEmail"
+                                        <input type="text" class="form-control" name="login" id="login"
                                                tabindex="1" placeholder="Email address" aria-label="Email address"
                                                required="required"
-                                               data-msg="Please enter a valid email address."/>
+                                               data-msg="Please enter a email address."/>
                                     </div>
                                     <!-- End Form Group -->
 
@@ -149,11 +155,12 @@
                                             </span>
                                         </label>
                                         <input type="password" class="form-control" name="password"
-                                               id="signinSrPassword" tabindex="2" placeholder="********"
+                                               id="password" tabindex="2" placeholder="********"
                                                aria-label="********" required="required"
                                                data-msg="Your password is invalid. Please try again."/>
                                     </div>
                                     <!-- End Form Group -->
+
 
                                     <!-- Button -->
                                     <div class="row align-items-center mb-5">
@@ -169,7 +176,11 @@
                                         </div>
                                     </div>
                                     <!-- End Button -->
-                                </form>
+<!--                                </form>-->
+
+                                   <input type="hidden" name="redirect" t-att-value="redirect"/>
+
+                                     </form>
                                 <!-- End Form -->
                             </div>
                         </div>
