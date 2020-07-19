@@ -137,138 +137,138 @@
 
                 <div class="header-section">
                     <!-- Topbar -->
-                    <div class="container header-hide-content pt-2">
-                        <div class="d-flex align-items-center">
-                            <!-- Language -->
-                            <div class="hs-unfold">
-                                <a class="js-hs-unfold-invoker dropdown-nav-link dropdown-toggle d-flex align-items-center"
-                                   href="javascript:;"
-                                   data-hs-unfold-options='{
-                "target": "#languageDropdown",
-                "type": "css-animation",
-                "event": "hover",
-                "hideOnScroll": "true"
-               }'>
-                                    <img class="dropdown-item-icon mr-2"
-                                         src="/website_agency/static/src/vendor/flag-icon-css/flags/4x3/us.svg"
-                                         alt="SVG"/>
-                                    <span class="d-inline-block d-sm-none">US</span>
-                                    <span class="d-none d-sm-inline-block">United States</span>
-                                </a>
+<!--                    <div class="container header-hide-content pt-2">-->
+<!--                        <div class="d-flex align-items-center">-->
+<!--                            &lt;!&ndash; Language &ndash;&gt;-->
+<!--                            <div class="hs-unfold">-->
+<!--                                <a class="js-hs-unfold-invoker dropdown-nav-link dropdown-toggle d-flex align-items-center"-->
+<!--                                   href="javascript:;"-->
+<!--                                   data-hs-unfold-options='{-->
+<!--                "target": "#languageDropdown",-->
+<!--                "type": "css-animation",-->
+<!--                "event": "hover",-->
+<!--                "hideOnScroll": "true"-->
+<!--               }'>-->
+<!--                                    <img class="dropdown-item-icon mr-2"-->
+<!--                                         src="/website_agency/static/src/vendor/flag-icon-css/flags/4x3/us.svg"-->
+<!--                                         alt="SVG"/>-->
+<!--                                    <span class="d-inline-block d-sm-none">US</span>-->
+<!--                                    <span class="d-none d-sm-inline-block">United States</span>-->
+<!--                                </a>-->
 
-                                <div id="languageDropdown" class="hs-unfold-content dropdown-menu">
-                                    <a class="dropdown-item active" href="#">English</a>
-                                    <a class="dropdown-item" href="#">Deutsch</a>
-                                    <a class="dropdown-item" href="#">Español‎</a>
-                                </div>
-                            </div>
-                            <!-- End Language -->
+<!--                                <div id="languageDropdown" class="hs-unfold-content dropdown-menu">-->
+<!--                                    <a class="dropdown-item active" href="#">English</a>-->
+<!--                                    <a class="dropdown-item" href="#">Deutsch</a>-->
+<!--                                    <a class="dropdown-item" href="#">Español‎</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash; End Language &ndash;&gt;-->
 
-                            <div class="ml-auto">
-                                <!-- Jump To -->
-                                <div class="hs-unfold d-sm-none mr-2">
-                                    <a class="js-hs-unfold-invoker dropdown-nav-link dropdown-toggle d-flex align-items-center"
-                                       href="javascript:;"
-                                       data-hs-unfold-options='{
-                  "target": "#jumpToDropdown",
-                  "type": "css-animation",
-                  "event": "hover",
-                  "hideOnScroll": "true"
-                 }'>
-                                        Jump to
-                                    </a>
+<!--                            <div class="ml-auto">-->
+<!--                                &lt;!&ndash; Jump To &ndash;&gt;-->
+<!--                                <div class="hs-unfold d-sm-none mr-2">-->
+<!--                                    <a class="js-hs-unfold-invoker dropdown-nav-link dropdown-toggle d-flex align-items-center"-->
+<!--                                       href="javascript:;"-->
+<!--                                       data-hs-unfold-options='{-->
+<!--                  "target": "#jumpToDropdown",-->
+<!--                  "type": "css-animation",-->
+<!--                  "event": "hover",-->
+<!--                  "hideOnScroll": "true"-->
+<!--                 }'>-->
+<!--                                        Jump to-->
+<!--                                    </a>-->
 
-                                    <div id="jumpToDropdown" class="hs-unfold-content dropdown-menu">
-                                        <a class="dropdown-item" href="faq.html">Help</a>
-                                        <a class="dropdown-item" href="contacts-agency.html">Contacts</a>
-                                    </div>
-                                </div>
-                                <!-- End Jump To -->
+<!--                                    <div id="jumpToDropdown" class="hs-unfold-content dropdown-menu">-->
+<!--                                        <a class="dropdown-item" href="faq.html">Help</a>-->
+<!--                                        <a class="dropdown-item" href="contacts-agency.html">Contacts</a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; End Jump To &ndash;&gt;-->
 
-                                <!-- Links -->
-                                <div class="nav nav-sm nav-y-0 d-none d-sm-flex ml-sm-auto">
-                                    <a class="nav-link" href="faq.html">Help</a>
-                                    <a class="nav-link" href="contacts-agency.html">Contacts</a>
-                                </div>
-                                <!-- End Links -->
-                            </div>
+<!--                                &lt;!&ndash; Links &ndash;&gt;-->
+<!--                                <div class="nav nav-sm nav-y-0 d-none d-sm-flex ml-sm-auto">-->
+<!--                                    <a class="nav-link" href="faq.html">Help</a>-->
+<!--                                    <a class="nav-link" href="contacts-agency.html">Contacts</a>-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; End Links &ndash;&gt;-->
+<!--                            </div>-->
 
-                            <ul class="list-inline ml-2 mb-0">
-                                <!-- Search -->
-                                <li class="list-inline-item">
-                                    <div class="hs-unfold">
-                                        <a class="js-hs-unfold-invoker btn btn-xs btn-icon btn-ghost-secondary"
-                                           href="javascript:;"
-                                           data-hs-unfold-options='{
-                    "target": "#searchPushTop",
-                    "type": "jquery-slide",
-                    "contentSelector": ".search-push-top"
-                   }'>
-                                            <i class="fas fa-search"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                                <!-- End Search -->
+<!--                            <ul class="list-inline ml-2 mb-0">-->
+<!--                                &lt;!&ndash; Search &ndash;&gt;-->
+<!--                                <li class="list-inline-item">-->
+<!--                                    <div class="hs-unfold">-->
+<!--                                        <a class="js-hs-unfold-invoker btn btn-xs btn-icon btn-ghost-secondary"-->
+<!--                                           href="javascript:;"-->
+<!--                                           data-hs-unfold-options='{-->
+<!--                    "target": "#searchPushTop",-->
+<!--                    "type": "jquery-slide",-->
+<!--                    "contentSelector": ".search-push-top"-->
+<!--                   }'>-->
+<!--                                            <i class="fas fa-search"></i>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </li>-->
+<!--                                &lt;!&ndash; End Search &ndash;&gt;-->
 
-                                <!-- Shopping Cart -->
-                                <li class="list-inline-item">
-                                    <div class="hs-unfold">
-                                        <a class="js-hs-unfold-invoker btn btn-xs btn-icon btn-ghost-secondary"
-                                           href="javascript:;"
-                                           data-hs-unfold-options='{
-                    "target": "#shoppingCartDropdown",
-                    "type": "css-animation",
-                    "event": "hover",
-                    "hideOnScroll": "true"
-                   }'>
-                                            <i class="fas fa-shopping-cart"></i>
-                                        </a>
+<!--                                &lt;!&ndash; Shopping Cart &ndash;&gt;-->
+<!--                                <li class="list-inline-item">-->
+<!--                                    <div class="hs-unfold">-->
+<!--                                        <a class="js-hs-unfold-invoker btn btn-xs btn-icon btn-ghost-secondary"-->
+<!--                                           href="javascript:;"-->
+<!--                                           data-hs-unfold-options='{-->
+<!--                    "target": "#shoppingCartDropdown",-->
+<!--                    "type": "css-animation",-->
+<!--                    "event": "hover",-->
+<!--                    "hideOnScroll": "true"-->
+<!--                   }'>-->
+<!--                                            <i class="fas fa-shopping-cart"></i>-->
+<!--                                        </a>-->
 
-                                        <div id="shoppingCartDropdown"
-                                             class="hs-unfold-content dropdown-menu dropdown-menu-right dropdown-card text-center"
-                                             style="min-width: 275px;">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <figure class="max-w-9rem mx-auto mb-3">
-                                                        <img class="img-fluid"
-                                                             src="/website_agency/static/src/svg/illustrations/empty-cart.svg"
-                                                             alt="SVG"/>
-                                                    </figure>
-                                                    <span class="d-block">Your cart is empty</span>
-                                                </div>
+<!--                                        <div id="shoppingCartDropdown"-->
+<!--                                             class="hs-unfold-content dropdown-menu dropdown-menu-right dropdown-card text-center"-->
+<!--                                             style="min-width: 275px;">-->
+<!--                                            <div class="card">-->
+<!--                                                <div class="card-body">-->
+<!--                                                    <figure class="max-w-9rem mx-auto mb-3">-->
+<!--                                                        <img class="img-fluid"-->
+<!--                                                             src="/website_agency/static/src/svg/illustrations/empty-cart.svg"-->
+<!--                                                             alt="SVG"/>-->
+<!--                                                    </figure>-->
+<!--                                                    <span class="d-block">Your cart is empty</span>-->
+<!--                                                </div>-->
 
-                                                <div class="card-footer">
-                                                    <small>Free shipping on orders over
-                                                        <strong class="text-dark">$50</strong>
-                                                    </small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- End Shopping Cart -->
+<!--                                                <div class="card-footer">-->
+<!--                                                    <small>Free shipping on orders over-->
+<!--                                                        <strong class="text-dark">$50</strong>-->
+<!--                                                    </small>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </li>-->
+<!--                                &lt;!&ndash; End Shopping Cart &ndash;&gt;-->
 
-                                <!-- Account Login -->
-                                <li class="list-inline-item">
-                                    <div class="hs-unfold">
-                                        <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-secondary"
-                                           href="javascript:;"
-                                           data-hs-unfold-options='{
-                    "target": "#sidebarContent",
-                    "type": "css-animation",
-                    "animationIn": "fadeInRight",
-                    "animationOut": "fadeOutRight",
-                    "hasOverlay": "rgba(55, 125, 255, 0.1)",
-                    "smartPositionOff": true
-                   }'>
-                                            <i class="fas fa-user-circle"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                                <!-- End Account Login -->
-                            </ul>
-                        </div>
-                    </div>
+<!--                                &lt;!&ndash; Account Login &ndash;&gt;-->
+<!--                                <li class="list-inline-item">-->
+<!--                                    <div class="hs-unfold">-->
+<!--                                        <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-secondary"-->
+<!--                                           href="javascript:;"-->
+<!--                                           data-hs-unfold-options='{-->
+<!--                    "target": "#sidebarContent",-->
+<!--                    "type": "css-animation",-->
+<!--                    "animationIn": "fadeInRight",-->
+<!--                    "animationOut": "fadeOutRight",-->
+<!--                    "hasOverlay": "rgba(55, 125, 255, 0.1)",-->
+<!--                    "smartPositionOff": true-->
+<!--                   }'>-->
+<!--                                            <i class="fas fa-user-circle"></i>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </li>-->
+<!--                                &lt;!&ndash; End Account Login &ndash;&gt;-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <!-- End Topbar -->
 
                     <div id="logoAndNav" class="container">
@@ -305,7 +305,31 @@
                             <!-- Navigation -->
                             <div id="navBar" class="collapse navbar-collapse">
                                 <div class="navbar-body header-abs-top-inner">
+
                                     <ul class="navbar-nav">
+                                        <!-- Blog -->
+                                        <li class="hs-has-sub-menu navbar-nav-item">
+                                            <a id="blogMegaMenu1" class="hs-mega-menu-invoker nav-link nav-link-toggle"
+                                               href="javascript:;" aria-haspopup="true" aria-expanded="false"
+                                               aria-labelledby="blogSubMenu1">Complete
+                                            </a>
+
+                                            <!-- Blog - Submenu -->
+                                            <div id="blogSubMenu1" class="hs-sub-menu dropdown-menu"
+                                                 aria-labelledby="blogMegaMenu1" style="min-width: 230px;">
+                                                <a class="dropdown-item" href="/about-agency">About Agency</a>
+                                                <a class="dropdown-item" href="/services-agency">Service Agency</a>
+                                                <a class="dropdown-item" href="/customers">Customers</a>
+                                                <a class="dropdown-item" href="/customer-story">Customers Story</a>
+                                                <a class="dropdown-item" href="/pricing">Pricing</a>
+                                                <a class="dropdown-item" href="/terms">Terms &amp; Condition</a>
+                                                <a class="dropdown-item" href="/landings-app-saas">Landing App Saas</a>
+                                                <a class="dropdown-item" href="/landings-app-workflow">Landing App Workflow</a>
+                                            </div>
+                                            <!-- End Submenu -->
+                                        </li>
+                                        <!-- End Blog -->
+
                                         <!-- Home -->
                                         <li class="hs-has-mega-menu navbar-nav-item">
                                             <a id="homeMegaMenu" class="hs-mega-menu-invoker nav-link nav-link-toggle"
@@ -600,9 +624,9 @@
                                                     <div id="navSubmenuPagesUtilities" class="hs-sub-menu dropdown-menu"
                                                          aria-labelledby="navLinkPagesUtilities"
                                                          style="min-width: 230px;">
-                                                        <a class="dropdown-item" href="pricing.html">Pricing</a>
+                                                        <a class="dropdown-item" href="/pricing">Pricing</a>
                                                         <a class="dropdown-item" href="faq.html">FAQ</a>
-                                                        <a class="dropdown-item" href="terms.html">Terms &amp;
+                                                        <a class="dropdown-item" href="/terms">Terms &amp;
                                                             Conditions
                                                         </a>
                                                         <a class="dropdown-item" href="privacy.html">Privacy &amp;
