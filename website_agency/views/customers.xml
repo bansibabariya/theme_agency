@@ -7,7 +7,7 @@
                     <!-- ========== MAIN CONTENT ========== -->
                     <main id="content" role="main" style="padding-top: 112px;">
                         <!-- Hero Section -->
-                        <div class="position-relative bg-img-hero"
+                        <div class="position-relative bg-img-hero img-fluid"
                              style="background-image: url(/website_agency/static/src/img/1920x1080/img6.jpg);">
                             <div class="container space-2 space-md-3 space-bottom-lg-4 min-h-300rem">
                                 <div class="d-none d-md-block w-lg-50">

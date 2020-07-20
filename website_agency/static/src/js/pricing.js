@@ -1,19 +1,25 @@
 $( document ).ready(function() {
 
     // initialization of sticky blocks
+    if($('.js-sticky-block')){
       $('.js-sticky-block').each(function () {
         var stickyBlock = new HSStickyBlock($(this)).init();
       });
+    }
 
       // initialization of scroll nav
+    if($('.js-scroll-nav')){
       $('.js-scroll-nav').each(function () {
         var scrollNav = new HSScrollNav($(this)).init();
       });
+    }
 
       // initialization of toggle switch
+    if($('.js-toggle-switch')){
       $('.js-toggle-switch').each(function () {
         var toggleSwitch = new HSToggleSwitch($(this)).init();
       });
+    }
 
       var windowLoc = $(location).attr('pathname');
       if(windowLoc.search('landings-app-saas') !== -1){

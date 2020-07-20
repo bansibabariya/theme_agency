@@ -11,7 +11,7 @@
                                 <div class="col-lg-3 ml-lg-auto mb-5 mb-lg-0">
                                     <!-- Logo -->
                                     <div class="mb-4">
-                                        <a href="../landings/index.html" aria-label="Front">
+                                        <a href="#" aria-label="Front">
                                             <img class="brand" src="/website_agency/static/src/svg/logos/logo-white.svg"
                                                  alt="Logo"/>
                                         </a>
@@ -189,38 +189,6 @@
                                         </li>
                                         <!-- End Social Networks -->
 
-                                        <!-- Language -->
-                                        <li class="list-inline-item">
-                                            <div class="hs-unfold">
-                                                <a class="js-hs-unfold-invoker dropdown-toggle btn btn-xs btn-soft-light"
-                                                   href="javascript:;"
-                                                   data-hs-unfold-options='{
-                          "target": "#footerLanguage",
-                          "type": "css-animation",
-                          "animationIn": "slideInDown"
-                         }'>
-                                                    <img class="dropdown-item-icon"
-                                                         src="/website_agency/static/src/vendor/flag-icon-css/flags/4x3/us.svg"
-                                                         alt="United States Flag"/>
-                                                    <span>United States</span>
-                                                </a>
-
-                                                <div id="footerLanguage"
-                                                     class="hs-unfold-content dropdown-menu dropdown-unfold dropdown-menu-bottom mb-2">
-                                                    <a class="dropdown-item active" href="#">English</a>
-                                                    <a class="dropdown-item" href="#">Deutsch</a>
-                                                    <a class="dropdown-item" href="#">Español</a>
-                                                    <a class="dropdown-item" href="#">Français</a>
-                                                    <a class="dropdown-item" href="#">Italiano</a>
-                                                    <a class="dropdown-item" href="#">日本語</a>
-                                                    <a class="dropdown-item" href="#">한국어</a>
-                                                    <a class="dropdown-item" href="#">Nederlands</a>
-                                                    <a class="dropdown-item" href="#">Português</a>
-                                                    <a class="dropdown-item" href="#">Русский</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- End Language -->
                                     </ul>
                                 </div>
                             </div>
