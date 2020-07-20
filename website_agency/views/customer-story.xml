@@ -2,12 +2,11 @@
 <odoo>
     <template id="customer-story" name="Customer Story">
         <t t-call="website.layout">
-            <section>
                 <div class="oe_structure">
                     <!-- ========== MAIN CONTENT ========== -->
                     <main id="content" role="main" style="padding-top: 112px;">
                         <!-- Hero Section -->
-                        <div class="bg-primary bg-img-hero"
+                        <section class="bg-primary bg-img-hero"
                              style="background-image: url(/website_agency/static/src/svg/components/abstract-shapes-5.svg);">
                             <div class="container space-2 space-lg-3">
                                 <div class="w-lg-65 text-center mx-lg-auto">
@@ -19,10 +18,11 @@
                                     </h1>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                         <!-- End Hero Section -->
 
                         <!-- Content Section -->
+                        <section>
                         <div class="container space-2 space-lg-0">
                             <div class="row">
                                 <div id="stickyBlockStartPoint" class="col-lg-4 mt-lg-n11 mb-7 mb-lg-0">
@@ -174,12 +174,14 @@
                                 </div>
                             </div>
                         </div>
+                        </section>
                         <!-- End Content Section -->
 
                         <!-- Sticky Block End Point -->
                         <div id="stickyBlockEndPoint"></div>
 
                         <!-- Testimonials -->
+                        <section>
                         <div class="bg-light">
                             <div class="container space-1 space-md-2 space-lg-3">
                                 <div class="w-lg-75 mx-lg-auto">
@@ -213,9 +215,11 @@
                                 </div>
                             </div>
                         </div>
+                        </section>
                         <!-- Testimonials -->
 
                         <!-- Stories Section -->
+                        <section>
                         <div class="container space-2 space-lg-3">
                             <!-- Title -->
                             <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
@@ -296,10 +300,11 @@
                                 </div>
                             </div>
                         </div>
+                        </section>
                         <!-- End Stories Section -->
 
                         <!-- CTA Section -->
-                        <div class="bg-primary text-center bg-img-hero"
+                        <section class="bg-primary text-center bg-img-hero"
                              style="background-image: url(/website_agency/static/src/svg/components/abstract-shapes-5.svg);">
                             <div class="container space-2">
                                 <div class="mb-5">
@@ -307,12 +312,11 @@
                                 </div>
                                 <a class="btn btn-light transition-3d-hover" href="#">Schedule a Demo</a>
                             </div>
-                        </div>
+                        </section>
                         <!-- End CTA Section -->
                     </main>
                     <!-- ========== END MAIN CONTENT ========== -->
                 </div>
-            </section>
         </t>
     </template>
 </odoo>

@@ -1,11 +1,11 @@
 $( document ).ready(function() {
 
     // initialization of sticky blocks
-    if($('.js-sticky-block')){
+//    if($('.js-sticky-block')){
       $('.js-sticky-block').each(function () {
         var stickyBlock = new HSStickyBlock($(this)).init();
       });
-    }
+//    }
 
       // initialization of scroll nav
     if($('.js-scroll-nav')){

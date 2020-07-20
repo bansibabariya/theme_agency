@@ -2,12 +2,12 @@
 <odoo>
     <template id="customers" name="Customers">
         <t t-call="website.layout">
-            <section>
                 <div class="oe_structure">
                     <!-- ========== MAIN CONTENT ========== -->
                     <main id="content" role="main" style="padding-top: 112px;">
                         <!-- Hero Section -->
-                        <div class="position-relative bg-img-hero img-fluid"
+
+                        <section class="position-relative bg-img-hero img-fluid"
                              style="background-image: url(/website_agency/static/src/img/1920x1080/img6.jpg);">
                             <div class="container space-2 space-md-3 space-bottom-lg-4 min-h-300rem">
                                 <div class="d-none d-md-block w-lg-50">
@@ -24,7 +24,7 @@
                                 </svg>
                             </figure>
                             <!-- End SVG Background -->
-                        </div>
+                        </section>
                         <!-- End Hero Section -->
 
                         <!-- Clients Section -->
@@ -315,7 +315,7 @@
                         <!-- End Stories Section -->
 
                         <!-- CTA Section -->
-                        <div class="bg-primary text-center bg-img-hero"
+                        <section class="bg-primary text-center bg-img-hero"
                              style="background-image: url(/website_agency/static/src/svg/components/abstract-shapes-5.svg);">
                             <div class="container space-2">
                                 <div class="mb-5">
@@ -323,12 +323,11 @@
                                 </div>
                                 <a class="btn btn-light transition-3d-hover" href="#">Schedule a Demo</a>
                             </div>
-                        </div>
+                        </section>
                         <!-- End CTA Section -->
                     </main>
                     <!-- ========== END MAIN CONTENT ========== -->
                 </div>
-            </section>
         </t>
     </template>
 </odoo>

@@ -1,6 +1,6 @@
 $( document ).ready(function() {
   // initialization of header
-  var header = new HSHeader($('#header')).init();
+//  var header = new HSHeader($('#header')).init();
 
   // initialization of mega menu
   var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
